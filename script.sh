@@ -19,3 +19,5 @@ sudo systemctl enable docker.service
 
 sudo usermod -aG docker $USER
 
+sudo pacman -Syu code \
+    pycharm-community-edition
