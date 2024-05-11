@@ -1,25 +1,25 @@
-#!/bin/bash
+#!/bin/bash -ex
 
 sudo pacman -Syu
 
-sudo pamac install \
-    mc \
+sudo pamac install base-devel --no-confirm
+
+sudo pacman -Syu mc \
     telegram-desktop \
     neofetch \
-    google-chrome \
     steam \
-    zoom \
     jupyter-notebook \
-    docker-desktop --no-confirm
-
-sudo pacman -S docker
-
-sudo pacman -Syu code \
+    docker \
+    code \
     pycharm-community-edition
+
+sudo pamac build \
+     google-chrome \
+     zoom \
+     docker-desktop
 
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
-
 sudo usermod -aG docker $USER
 
 reboot
