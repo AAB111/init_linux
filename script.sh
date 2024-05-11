@@ -14,10 +14,12 @@ sudo pamac install \
 
 sudo pacman -S docker
 
+sudo pacman -Syu code \
+    pycharm-community-edition
+
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
 
 sudo usermod -aG docker $USER
 
-sudo pacman -Syu code \
-    pycharm-community-edition
+reboot
